@@ -1,7 +1,5 @@
 #!/usr/bin/swift
 
-// https://chatgpt.com/c/598143ad-22ca-445b-bcd4-ddc412a044b8
-
 import Foundation
 import Security
 
