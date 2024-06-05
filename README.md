@@ -36,11 +36,11 @@ One way to use this tool is to periodically run it against your entire /Applicat
 
 Here's a simple example of how one could do this:
 
-#### Step 1 (init)
+#### Step 1 (initial setup)
 ```
 cscheck /Applications/*.app > ~/.known_good 2>/dev/null
 ```
-#### Step 2 (compare)
+#### Step 2 (compare - run this e.g. once per day)
 ```
 diff -y --suppress-common-lines ~/.known_good <(cscheck /Applications/*.app 2>/dev/null)
 ```
