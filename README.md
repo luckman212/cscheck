@@ -42,7 +42,7 @@ cscheck /Applications/*.app > ~/.known_good 2>/dev/null
 ```
 #### Step 2 (compare)
 ```
-diff -y ~/.known_good <(cscheck /Applications/*.app 2>/dev/null)
+diff -y --suppress-common-lines ~/.known_good <(cscheck /Applications/*.app 2>/dev/null)
 ```
 
 ### AI Disclosure
