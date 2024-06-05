@@ -30,4 +30,8 @@ Developer ID: 28488A87JB
 Developer Name: Seth Willits (28488A87JB)
 ```
 
+### AI Disclosure
+
+ChatGPT was used to help generate a portion of this code. Feel free to pass along tips or open issues for any errors or imrpovements! I am not a Swift developer by trade.
+
 [1]: https://news.ycombinator.com/item?id=40584606
