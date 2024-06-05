@@ -8,7 +8,7 @@ Some recent [hubbub][1] around a _silent change of ownership_ of the popular mac
 
 ### How
 
-To use, place in your `$PATH` and execute as
+To use, place the `cscheck` binary in your `$PATH` and execute as:
 
 ```
 cscheck /path/to/app
@@ -28,6 +28,21 @@ App: /Applications/Screenflick.app
 SHA-256 Fingerprint: 72d1436e7885315c580605e994e8a94e4a44a0523e2cde17e95430ae616469be
 Developer ID: 28488A87JB
 Developer Name: Seth Willits (28488A87JB)
+```
+
+### Automation
+
+One way to use this tool is to periodically run it against your entire /Applications directory, and compare it to a set of known-good values.
+
+Here's a simple example of how one could do this:
+
+#### Step 1 (init)
+```
+cscheck /Applications/*.app > ~/.known_good 2>/dev/null
+```
+#### Step 2 (compare)
+```
+diff -y ~/.known_good <(cscheck /Applications/*.app 2>/dev/null)
 ```
 
 ### AI Disclosure
