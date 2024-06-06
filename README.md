@@ -8,6 +8,12 @@ Some recent [hubbub][1] around a _silent change of ownership_ of the popular mac
 
 ### How
 
+If you'd rather not trust downloading the precompiled binary from this repo, feel free to compile your own:
+
+```
+swiftc -O -o cscheck cscheck.swift
+```
+
 To use, place the `cscheck` binary in your `$PATH` and execute as:
 
 ```
