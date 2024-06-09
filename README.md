@@ -33,7 +33,7 @@ $ cscheck /Applications/Screenflick.app
 App: /Applications/Screenflick.app
 SHA-256 Fingerprint: 72d1436e7885315c580605e994e8a94e4a44a0523e2cde17e95430ae616469be
 Developer ID: 28488A87JB
-Developer Name: Seth Willits (28488A87JB)
+Developer Name: Seth Willits
 ```
 
 ### Automation
