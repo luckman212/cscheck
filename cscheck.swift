@@ -31,6 +31,21 @@ func getCodeSigningInfo(for appPath: String) -> [String: AnyObject]? {
     return info
 }
 
+func formatDeveloperName(_ name: String) -> String {
+    // Remove prefix if present
+    let trimmedName: Substring
+    if let range = name.range(of: "Developer ID Application: ") {
+        trimmedName = name[range.upperBound...]
+    } else {
+        trimmedName = Substring(name)
+    }
+    // Remove DevID since we already output it separately
+    if let idRange = trimmedName.range(of: " (") {
+        return String(trimmedName[..<idRange.lowerBound])
+    }
+    return String(trimmedName)
+}
+
 func printDeveloperCertificateInfo(for appPath: String, certificates: [SecCertificate], teamIdentifier: String?) {
     if certificates.isEmpty {
         print("No certificates found for \(appPath)", to: &stdErr)
@@ -94,11 +109,7 @@ func printDeveloperCertificateInfo(for appPath: String, certificates: [SecCertif
         }
 
         if let name = developerName {
-            if let range = name.range(of: "Developer ID Application: ") {
-                print("Developer Name: \(name[range.upperBound...])")
-            } else {
-                print("Developer Name: \(name)")
-            }
+            print("Developer Name:", formatDeveloperName(name))
         } else {
             print("Failed to get Developer Name for \(appPath)", to: &stdErr)
         }
