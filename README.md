@@ -38,7 +38,7 @@ Developer Name: Seth Willits
 
 ### Automation
 
-One way to use this tool is to periodically run it against your entire /Applications directory, and compare it to a set of known-good values.
+One way to use this tool is to periodically run it against your entire /Applications directory, and compare the output to a set of known-good values.
 
 Here's a simple example of how one could do this:
 
